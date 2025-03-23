@@ -4,7 +4,13 @@ on:
   pull_request:
     branches:
       - main
-
+      
+permissions:
+  contents: read         # Read repository contents (default)
+  pull-requests: write   # Write access to pull requests
+  actions: read          # Read access to actions
+  statuses: write        # Write access to commit statuses
+  
 jobs:
   build:
     name: unit-tests
