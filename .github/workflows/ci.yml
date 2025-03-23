@@ -1,0 +1,26 @@
+name: run-tests
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: sudo apt-get update && sudo apt-get install -y cmake g++ libgtest-dev
+
+    - name: Configure and Build
+      run: |
+        cmake -S . -B build
+        cmake --build build
+
+    - name: Run Tests
+      run: ./build/tests/test_add
+
