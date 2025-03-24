@@ -63,7 +63,17 @@ git push --set-upstream origin <your-github-username>-lab
 ```
 `--set-upstream origin <your-github-username>-lab` links your local branch to a e remote repository and sets it as the default remote branch for push and pull operations. The next time you push to the remote repository you can do `git push`
 
+12. Now confirm that the changes appear on the remote repository.
 
-12. Now confirm that the changes appear on the remote repository and that the unit tests fail.
+13. Create a pull request by going to the pull request tab and comparing your new branch to main. If you recently pushed a branch to the remote repository it may come up automatically and you can `Compare & pull request`. 
 
-13. 
+14. Once you have created a pull request, unit tests will automatically run. Observe what tests failed by viewing the details.
+
+15. Now modify the files so the add function returns the correct output. Do this on the new branch you created.
+
+16. Stage, commit, and push these changes to the remote repository. Since your pull request is still open, you should see your new commit come up in the pull request.
+
+17. Confirm that unit tests pass.
+
+18. Add ec327-staff as approvers.
+19. This is the end of the lab. Usually one of the approvers will approve your PR and you can merge your changes into the main branch. The next time you work on another feature on your local device, you should `git pull` to get the new changes, and create a new branch based off main because the branch you merged is now outdated.
